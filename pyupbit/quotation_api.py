@@ -107,7 +107,7 @@ def get_ohlcv(ticker="KRW-BTC", interval="day", count=200, to=None,
             dt_list = []
             for x in contents:
                 dt = datetime.datetime.strptime(
-                    x['candle_date_time_kst'], "%Y-%m-%dT%H:%M:%S")
+                    x['candle_date_time_utc'], "%Y-%m-%dT%H:%M:%S")
                 #dt_list.append(dt.astimezone())
                 dt_list.append(dt)
 
@@ -177,7 +177,7 @@ def get_ohlcv_from(ticker="KRW-BTC", interval="day", fromDatetime=None,
             dt_list = []
             for x in contents:
                 dt = datetime.datetime.strptime(
-                    x['candle_date_time_kst'], "%Y-%m-%dT%H:%M:%S")
+                    x['candle_date_time_utc'], "%Y-%m-%dT%H:%M:%S")
                 #dt_list.append(dt.astimezone())
                 dt_list.append(dt)
             # set timezone for time comparison
